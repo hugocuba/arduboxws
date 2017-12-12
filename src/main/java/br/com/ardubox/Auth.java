@@ -27,7 +27,7 @@ import javax.ws.rs.core.Response.Status;
  *
  * @author hugo
  */
-@Path("/auth")
+@Path("auth")
 public class Auth implements Serializable {
 
     @POST
@@ -63,7 +63,7 @@ public class Auth implements Serializable {
     }
 
     @POST
-    @Path("/logout")
+    @Path("logout")
     public Response logout(@Context HttpHeaders httpHeaders) {
         try {
             Authenticator authenticator = Authenticator.getInstance();
