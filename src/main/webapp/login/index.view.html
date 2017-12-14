@@ -1,0 +1,41 @@
+<div id="login" class="row valign-wrapper">
+    <form name="form" ng-submit="form.$valid && vm.login()" class="col s12 m12 l4 offset-l4 card-panel">
+        <div class="row">
+            <div class="col s12 center-align">
+                <h3 class="card-title">Ardubox</h3>
+            </div>
+        </div>
+        <div class="card-content">
+            <div class="row">
+                <div class="input-field col s12" ng-class="{ 'has-error': form.$submitted && form.username.$invalid }">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input ng-model="vm.username" id="email" type="text" class="validate" required>
+                    <label for="icon_prefix">E-mail</label>
+                </div>
+                <div ng-messages="form.$submitted && form.username.$error">
+                    <div ng-message="required">Usuário é obrigatório</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12" ng-class="{ 'has-error': form.$submitted && form.password.$invalid }">
+                    <i class="material-icons prefix">lock</i>
+                    <input ng-model="vm.password" id="password" type="password" class="validate" required>
+                    <label for="password">Senha</label>
+                </div>
+                <div ng-messages="form.$submitted && form.password.$error">
+                    <div ng-message="required">Senha é obrigatória</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button  ng-disabled="vm.loading" class="btn waves-effect">Entrar
+                        <i class="material-icons right">send</i>
+                    </button>
+                    <img ng-if="vm.loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>

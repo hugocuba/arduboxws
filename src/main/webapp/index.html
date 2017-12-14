@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
     <head>
-        <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="app-content/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="app-content/js/materialize.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="app-content/css/materialize.min.css" media="screen,projection" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="app-content/css/ardubox.css" media="screen,projection" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ardubox</title>
     </head>
+
     <body>
-        <h1>Hello World!</h1>
+        <ui-view></ui-view>
+
+        <!-- application scripts -->
+        <script src="app.js"></script>
+        <script src="app-services/authentication.service.js"></script>
+        <script src="home/index.controller.js"></script>
+        <script src="login/index.controller.js"></script>
+
+        <!-- scripts for fake backend -->
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-mocks.js"></script>
+        <script src="app-helpers/fake-backend.js"></script>-->
     </body>
 </html>

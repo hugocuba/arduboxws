@@ -5,11 +5,13 @@
  */
 package br.com.ardubox;
 
+import java.math.BigInteger;
 import java.security.GeneralSecurityException;
+import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import java.util.UUID;
+import java.util.Random;
 import javax.security.auth.login.LoginException;
 
 public class Authenticator {
@@ -49,9 +51,10 @@ public class Authenticator {
     public String login(String username, String password, String key) throws LoginException {
         if (isKeyValid(key)) {
             if ("hugo".equals(username) && "cuba".equals(password)) {
-                String auth = UUID.randomUUID().toString();
-                tokens.put(auth, username);
-                return auth;
+                Random random = new SecureRandom();
+                String token = new BigInteger(256, random).toString();
+                tokens.put(token, username);
+                return token;
             }
         }
         throw new LoginException();

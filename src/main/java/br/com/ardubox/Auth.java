@@ -36,6 +36,8 @@ public class Auth implements Serializable {
     public Response login(@Context HttpHeaders httpHeaders,
             @FormParam("username") String username,
             @FormParam("password") String password) {
+        
+        System.out.println(username+password);
 
         Authenticator authentication = Authenticator.getInstance();
         String key = httpHeaders.getHeaderString(Headers.KEY);
