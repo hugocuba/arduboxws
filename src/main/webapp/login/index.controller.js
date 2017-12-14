@@ -24,9 +24,11 @@
                 if (result) {
                     console.log("Resultado OK");
                     $location.path('/');
+                    window.location = '#/';
                 } else {
                     Materialize.toast('Usuário ou senha inválidos.', 3000);
                     vm.loading = false;
+                    window.location = '#/';
                 }
             });
         };

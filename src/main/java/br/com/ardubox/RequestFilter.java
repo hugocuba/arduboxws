@@ -17,10 +17,7 @@ import javax.ws.rs.ext.Provider;
  *
  * @author hugo
  */
-/**
- *
- * @author joao.rodrigo
- */
+
 @Provider
 @PreMatching
 public class RequestFilter implements ContainerRequestFilter{

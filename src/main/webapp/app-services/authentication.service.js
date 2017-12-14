@@ -20,8 +20,8 @@
 
             var params = new URLSearchParams();
             params.append('username', user);
-            params.append('password', pass);
-
+            params.append('password', CryptoJS.SHA512(pass));
+            
             axios.post('api/auth', params)
                     .then(function (response) {
                         $localStorage.currentUser = {username: response.data.username, token: response.data.token};
@@ -33,7 +33,6 @@
                         console.log(error);
                         callback(false);
                     });
-
         }
 
         function Logout() {
