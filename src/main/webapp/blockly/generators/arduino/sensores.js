@@ -9,18 +9,33 @@ Blockly.Arduino['sensor_movimento'] = function(block) {
     
     Blockly.Arduino.setups_['setup_sensorMovimento'] = 
         'pinMode(pinoSensorMovimento,INPUT);\n' +
-        'Serial.print("Calibrando o sensor de presença...")\n' +
         'for(int i = 0; i < calibracaoSensorMovimento; i++){\n' +
-        'Serial.print("."); delay(1000);\n} \n' +
-        'Serial.println("Sensor Ativado"); delay(500);\n';
+        'delay(1000);\n} \n';
     
     var branch = Blockly.Arduino.statementToCode(this, 'movimento');
 
     var code = 
         'iniciaSensorMovimento = digitalRead(pinoSensorMovimento);\n' +
-        'Serial.print("Valor do Sensor PIR: ");\n' +
-        'Serial.println(iniciaSensorMovimento);\n' +
         'if (iniciaSensorMovimento == ' + mov +') {\n'
+        + branch +
+        '\n}\n';
+    return code;
+};
+
+Blockly.Arduino['sensor_temperatura'] = function(block) {
+    
+    var temp = block.getFieldValue('temp');
+    var valorTemp = block.getFieldValue('valorTemp');
+    
+    Blockly.Arduino.definitions_['define_sensorTemperatura'] = 
+        '#include <Thermistor.h>\n' +
+        'Thermistor temp(0);\n';
+    
+    var branch = Blockly.Arduino.statementToCode(this, 'temperatura');
+
+    var code = 
+        'int temperature = temp.getTemp();\n' +
+        'if (temperature ' + temp + ' ' + valorTemp + ') {\n'
         + branch +
         '\n}\n';
     return code;

@@ -19,7 +19,7 @@ Blockly.Blocks['sensor_temperatura'] = {
         .setCheck(null)
         .appendField(new Blockly.FieldImage("https://upload.wikimedia.org/wikipedia/commons/c/c2/Temperature_Sensor_%28TMP36%29.jpg", 120, 80, "*"))
         .appendField("Temperatura")
-        .appendField(new Blockly.FieldDropdown([["menor que",">"], ["maior que","<"], ["igual a","="]]), "temp")
+        .appendField(new Blockly.FieldDropdown([["menor que","<"], ["maior que",">"], ["igual a","=="]]), "temp")
         .appendField(new Blockly.FieldNumber(0), "valorTemp")
         .appendField("°C");
     this.setPreviousStatement(true, null);

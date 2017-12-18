@@ -28,9 +28,10 @@
 
     function run($rootScope, $http, $location, $localStorage) {
         // keep user logged in after page refresh
-        if ($localStorage.currentUser) {
+        /*if ($localStorage.currentUser) {
+            $rootScope.userData = $localStorage.currentUser;
             //axios.defaults.headers.common['token'] = response.data.token;
-        }
+        }*/
 
         // redirect to login page if not logged in and trying to access a restricted page
         $rootScope.$on('$locationChangeStart', function (event, next, current) {

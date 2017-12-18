@@ -20,7 +20,7 @@ public abstract class DAO<E> {
         
     	if (entityManager == null) {
     	    EntityManagerFactory factory = 
-        		Persistence.createEntityManagerFactory("br.com.nfe");
+        		Persistence.createEntityManagerFactory("ardubox");
          
             entityManager = factory.createEntityManager();
         }

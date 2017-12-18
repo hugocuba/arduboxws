@@ -5,12 +5,9 @@
  */
 package br.com.ardubox;
 
-import br.com.ardubox.dao.UsuarioDAO;
 import java.math.BigInteger;
 import java.security.GeneralSecurityException;
 import java.security.SecureRandom;
-import java.time.Instant;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -19,11 +16,8 @@ import javax.security.auth.login.LoginException;
 
 public class Authenticator {
 
-    /* Simula uma tabela do banco com as chaves de acesso */
     private final Map<String, String> keys = new HashMap();
-
-    /* Guarda os tokens gerados em tempo de execução */
-    private final Map<String, String> tokens = new HashMap<>();
+    private final Map<String, String> tokens = new HashMap<>();    
 
     private static Authenticator authenticator = null;
 
@@ -43,7 +37,7 @@ public class Authenticator {
         return authenticator;
     }
 
-    public String login(String username, String password, String key) throws LoginException {
+    public String login(String username, String password, String key) throws LoginException {        
         if (isKeyValid(key)) {
             
             Usuario u = new Usuario("hscuba@gmail.com", "9a080999e01cce6ada0702924ad28b1bcbcaf7497155517bacb80855722bb2d0637f03f34b027d23fa23ea28ad88ff81d6e364a4a0a2e380d5ee59f71d100554", "Hugo Cuba");

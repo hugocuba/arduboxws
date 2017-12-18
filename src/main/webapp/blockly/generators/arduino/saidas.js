@@ -8,7 +8,7 @@ Blockly.Arduino['saida_led_integrado'] = function(block) {
         'pinMode(ledIntegrado, OUTPUT);';
 
     var code = 
-        'digitalWrite(ledIntegrado, ' + estado + ');'
+        'digitalWrite(ledIntegrado, ' + estado + ');\n';
 
     return code;
 };
@@ -23,7 +23,7 @@ Blockly.Arduino['saida_led_vermelho'] = function(block) {
         'pinMode(ledVermelho, OUTPUT);';
 
     var code = 
-        'digitalWrite(ledVermelho, ' + estado + ');'
+        'digitalWrite(ledVermelho, ' + estado + ');\n';
 
     return code;
 };
@@ -38,7 +38,7 @@ Blockly.Arduino['saida_led_verde'] = function(block) {
         'pinMode(ledVerde, OUTPUT);';
 
     var code = 
-        'digitalWrite(ledVerde, ' + estado + ');'
+        'digitalWrite(ledVerde, ' + estado + ');\n';
 
     return code;
 };
